@@ -1,0 +1,45 @@
+import React,{useState} from 'react'
+import {View, Text,StyleSheet,Button} from 'react-native'
+
+const Profile = ({name,status})=>{ 
+  return (
+    <View>
+    
+    <Text>{name} </Text>
+    <Text>{status} </Text>
+    </View>
+
+
+  )
+
+} 
+
+
+const styles=StyleSheet.create({
+  myveiw:{
+    backgroundColor:"pink"
+    
+  }
+})
+
+function App(){
+const [name,setname]=useState("mukesh")
+
+
+  return(
+    <View>
+    {
+      name ? <Text>{name}</Text> : <Text> no name</Text>
+    }
+<Button 
+      title="change name"
+              color="black"
+onPress={()=>{
+      setname("")
+    }}/>
+</View>
+   
+
+  )
+}
+export default App
